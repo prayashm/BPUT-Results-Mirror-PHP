@@ -12,13 +12,18 @@
 	    	echo "new PDO()";
 		return $dbh;
 	}
-	/*
+
 	try {
 		$conn =  newPDO();
 		echo "Connected to DB!";
+		$stmt = $conn->prepare("SELECT * FROM cgpa_cet)");
+	        $stmt->excute();
+	        echo "Excecuted";
+	        while($row = $stmt->fetch()) {
+	                print_r($row);
+
 	}
 	catch(PDOException $e) {
 		echo $e->getMessage();
 	}
-	*/
 ?>
