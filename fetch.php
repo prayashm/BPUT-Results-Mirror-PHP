@@ -22,18 +22,21 @@ for($roll = $_GET['s']; $roll <= $_GET['e']; $roll++){
 
 				//var_dump($match);
 				$sgpa = $match[1];
+				/*
 				if ($maxSGPA < $sgpa){
 					$maxSGPA = $sgpa;
 					$topper = $name;
 				}
-				echo $roll." | ".str_pad($branch, 23)." | ".$name." - ".$sgpa.PHP_EOL;
+				*/
+				echo $roll." | ".str_pad($branch, 23)." | ".$name." - ".$sgpa.PHP_EOL."<br/>";
 			}
 		}
 	}
 }
 
+/*
 echo PHP_EOL."Topper is $topper - $maxSGPA".PHP_EOL;
-
+*/
 function url_exists($url) {
 	$file_headers = @get_headers($url);
 	if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
