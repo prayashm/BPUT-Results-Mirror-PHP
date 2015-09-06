@@ -11,7 +11,7 @@
 	    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    return $dbh;
 	}
-
+	/*
 	try {
 		$conn =  newPDO();
 		echo "Connected to DB!";
@@ -19,4 +19,5 @@
 	catch(PDOException $e) {
 		echo $e->getMessage();
 	}
+	*/
 ?>
