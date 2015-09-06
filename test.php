@@ -1,6 +1,12 @@
 <?php
+try {
 
-echo $argv[0];
-echo PHP_EOL.$argv[1];
+	require_once 'db-conf';
+	$conn = newPDO();
+	$stmt = $conn->prepare("SELECT * FROM cgpa_cet");
+	$stmt->excute();
 
+} catch(PDOException $e) {
+	echo 'ERROR: '.$e->getMessage();
+}
 ?>
