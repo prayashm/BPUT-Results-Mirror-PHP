@@ -2,7 +2,7 @@
 include 'simple_html_dom.php';
 $maxSGPA = 0;
 $topper = "Couldn't find topper in this range.";
-for($roll = $_GET['s']; $roll <= $_GET['e']; $roll++){
+for($roll = $argv[1]; $roll <= $argv[2]; $roll++){
 	$link = "http://results.bput.ac.in/525_RES/".$roll.".html";
 	if (url_exists($link) == true) {
 		//echo $link.PHP_EOL;
@@ -22,21 +22,18 @@ for($roll = $_GET['s']; $roll <= $_GET['e']; $roll++){
 
 				//var_dump($match);
 				$sgpa = $match[1];
-				/*
 				if ($maxSGPA < $sgpa){
 					$maxSGPA = $sgpa;
 					$topper = $name;
 				}
-				*/
-				echo $roll." | ".str_pad($branch, 23)." | ".$name." - ".$sgpa.PHP_EOL."<br/>";
+				echo $roll." | ".str_pad($branch, 23)." | ".$name." - ".$sgpa.PHP_EOL;
 			}
 		}
 	}
 }
 
-/*
 echo PHP_EOL."Topper is $topper - $maxSGPA".PHP_EOL;
-*/
+
 function url_exists($url) {
 	$file_headers = @get_headers($url);
 	if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
